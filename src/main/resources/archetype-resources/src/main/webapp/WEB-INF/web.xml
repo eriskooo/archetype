@@ -33,20 +33,20 @@
     </servlet-mapping>
 
 
-    <!-- JETM Performance measurement  -->
-    <!-- JETM Context Listener -->
-    <listener>
-        <listener-class>etm.contrib.integration.web.EtmMonitorContextListener</listener-class>
-    </listener>
+    <!--&lt;!&ndash; JETM Performance measurement  &ndash;&gt;-->
+    <!--&lt;!&ndash; JETM Context Listener &ndash;&gt;-->
+    <!--<listener>-->
+        <!--<listener-class>etm.contrib.integration.web.EtmMonitorContextListener</listener-class>-->
+    <!--</listener>-->
 
-    <!-- JETM Performance Monitor -->
-    <servlet>
-        <servlet-name>performanceMonitor</servlet-name>
-        <servlet-class>etm.contrib.integration.web.HttpConsoleServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>performanceMonitor</servlet-name>
-        <url-pattern>/performance/*</url-pattern>
-    </servlet-mapping>
+    <!--&lt;!&ndash; JETM Performance Monitor &ndash;&gt;-->
+    <!--<servlet>-->
+        <!--<servlet-name>performanceMonitor</servlet-name>-->
+        <!--<servlet-class>etm.contrib.integration.web.HttpConsoleServlet</servlet-class>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>performanceMonitor</servlet-name>-->
+        <!--<url-pattern>/performance/*</url-pattern>-->
+    <!--</servlet-mapping>-->
 </web-app>
