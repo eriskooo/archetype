@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="basic">
+    <requiredProperties>
+        <requiredProperty key="useBuildTools">
+            <validationRegex>true|false</validationRegex>
+            <defaultValue>false</defaultValue>
+        </requiredProperty>
+
+        <requiredProperty key="buildToolsGroupId">
+            <defaultValue>${project.groupId}</defaultValue>
+        </requiredProperty>
+
+        <requiredProperty key="buildToolsVersion">
+            <defaultValue>1.0.0-SNAPSHOT</defaultValue>
+        </requiredProperty>
+
+        <requiredProperty key="enableCheckstyle">
+            <validationRegex>true|false</validationRegex>
+            <defaultValue>false</defaultValue>
+        </requiredProperty>
+
+        <requiredProperty key="enableFindbugs">
+            <validationRegex>true|false</validationRegex>
+            <defaultValue>false</defaultValue>
+        </requiredProperty>
+
+        <requiredProperty key="enablePmd">
+            <validationRegex>true|false</validationRegex>
+            <defaultValue>false</defaultValue>
+        </requiredProperty>
+
+        <requiredProperty key="enableAntrun">
+            <validationRegex>true|false</validationRegex>
+            <defaultValue>false</defaultValue>
+        </requiredProperty>
+
+        <requiredProperty key="swaggerApiName"/>
+        
+        <requiredProperty key="swaggerApiDescription">
+            <defaultValue>Not yet described...</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+    <fileSets>
+        <fileSet filtered="true">
+            <directory>src/main/java/__packageInPathFormat__</directory>
+            <includes>
+                <include>**/*.java</include>
+            </includes>
+        </fileSet>
+
+        <fileSet filtered="true">
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+
+        <fileSet filtered="false">
+            <directory>src/main/webapp</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+
+
+        <fileSet filtered="true">
+            <directory>src/test/java/__packageInPathFormat__</directory>
+        </fileSet>
+
+        <fileSet filtered="true">
+            <directory>src/test/resources</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>

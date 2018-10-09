@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <!-- Enable role based security -->
+    <context-param>
+        <param-name>resteasy.role.based.security</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>OpenApi</servlet-name>
+        <servlet-class>io.swagger.v3.jaxrs2.integration.OpenApiServlet</servlet-class>
+
+        <init-param>
+            <param-name>openApi.configuration.resourcePackages</param-name>
+            <param-value>io.swagger.sample.resource</param-value>
+        </init-param>
+        <init-param>
+            <param-name>openApi.configuration.prettyPrint</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OpenApi</servlet-name>
+        <url-pattern>/openapi/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OpenApi</servlet-name>
+        <url-pattern>/api/swagger.json</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- JETM Performance measurement  -->
+    <!-- JETM Context Listener -->
+    <listener>
+        <listener-class>etm.contrib.integration.web.EtmMonitorContextListener</listener-class>
+    </listener>
+
+    <!-- JETM Performance Monitor -->
+    <servlet>
+        <servlet-name>performanceMonitor</servlet-name>
+        <servlet-class>etm.contrib.integration.web.HttpConsoleServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>performanceMonitor</servlet-name>
+        <url-pattern>/performance/*</url-pattern>
+    </servlet-mapping>
+</web-app>
