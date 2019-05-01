@@ -33,8 +33,8 @@ import io.swagger.v3.oas.annotations.servers.Server;
   info = @Info(version = "1.0.0", title = "New service API", description = "Provides access to the new service API operations"),
   security = {@SecurityRequirement(name = "bearerAuth")},
   servers = {
-    @Server(description = "Localhost (http)", url = "http://localhost:8080/new-service/api"),
-    @Server(description = "Secure Localhost (https)", url = "https://localhost:8443/new-service/api")
+    @Server(description = "Localhost (http)", url = "http://localhost:8080/${artifactId}/api"),
+    @Server(description = "Secure Localhost (https)", url = "https://localhost:8443/${artifactId}/api")
   })
 @SecurityScheme(name = "bearerAuth", type = SecuritySchemeType.HTTP, scheme = "bearer", bearerFormat = "JWT")
 public class JaxRsActivator extends Application {
