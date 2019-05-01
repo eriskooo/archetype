@@ -74,5 +74,13 @@
                 <include>**/*</include>
             </includes>
         </fileSet>
+
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>Dockerfile</include>
+            </includes>
+        </fileSet>
+
     </fileSets>
 </archetype-descriptor>
